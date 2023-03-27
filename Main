@@ -1,0 +1,90 @@
+//Adam Witkowski
+package inclassactivity6;
+
+import java.util.Scanner;
+
+public class InClassActivity6 {
+
+    public static void main(String[] args) {
+
+        int continuation = 0;
+        Scanner keyboard = new Scanner(System.in);
+        Scanner stringKeyboard = new Scanner(System.in);
+        
+        //Calc Start:
+        while (continuation == 0) {
+            System.out.println("What operation would you like? (Add, Subtract, Multiply, Divide)");
+            String calculatorType = stringKeyboard.nextLine();
+
+            //Add Block:
+            if (calculatorType.toLowerCase().equals("add")) {
+                System.out.print("First number: ");
+                int firstNumber = keyboard.nextInt();
+                System.out.print("Second number: ");
+                int secondNumber = keyboard.nextInt();
+                System.out.println(add(firstNumber, secondNumber));
+
+                //Subtract Block:    
+            } else if (calculatorType.toLowerCase().equals("subtract")) {
+                System.out.print("First number: ");
+                int firstNumber = keyboard.nextInt();
+                System.out.print("Second number: ");
+                int secondNumber = keyboard.nextInt();
+                System.out.println(subtract(firstNumber, secondNumber));
+
+                //Multiply Block:    
+            } else if (calculatorType.toLowerCase().equals("multiply")) {
+                System.out.print("First number: ");
+                int firstNumber = keyboard.nextInt();
+                System.out.print("Second number: ");
+                int secondNumber = keyboard.nextInt();
+                System.out.println(multiply(firstNumber, secondNumber));
+
+                //Divide Block:    
+            } else if (calculatorType.toLowerCase().equals("divide")) {
+                System.out.print("First number: ");
+                int firstNumber = keyboard.nextInt();
+                System.out.print("Second number: ");
+                int secondNumber = keyboard.nextInt();
+                System.out.println(divide(firstNumber, secondNumber));
+            } else {
+                System.out.println("Error!");
+                continue;
+            }
+            
+            //Continuation:
+            System.out.println("Would you like to go again? Yes or no.");
+            String continuationConfirmation = stringKeyboard.nextLine();
+            
+            if (continuationConfirmation.toLowerCase().equals("yes")) {
+                continuation = 0;
+            } else if (continuationConfirmation.toLowerCase().equals("no")) {
+                break;
+            } 
+        }
+    }
+
+    //Add:
+    public static int add(int numOne, int numTwo) {
+        int sum = numOne + numTwo;
+        return sum;
+    }
+
+    //Subtract:
+    public static int subtract(int numOne, int numTwo) {
+        int differance = numOne - numTwo;
+        return differance;
+    }
+
+    //Divide
+    public static double divide(double numOne, double numTwo) {
+        double dividend = numOne / numTwo;
+        return dividend;
+    }
+
+    //Multiply:
+    public static int multiply(int numOne, int numTwo) {
+        int product = numOne * numTwo;
+        return product;
+    }
+}
